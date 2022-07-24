@@ -15,6 +15,6 @@ function defineNextConfig(config) {
 export default defineNextConfig({
   reactStrictMode: true,
   images: {
-    domains: ["rb.gy","upload.wikimedia.org"]
+    domains: ["rb.gy","upload.wikimedia.org", "image.tmdb.org"]
   }
 });

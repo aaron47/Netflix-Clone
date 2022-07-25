@@ -7,10 +7,25 @@ import { InformationCircleIcon } from "@heroicons/react/solid";
 
 interface Props {
   netflixOriginals: Movie[];
+  trendingNow: Movie[];
+  topRated: Movie[];
+  actionMovies: Movie[];
+  comedyMovies: Movie[];
+  horrorMovies: Movie[];
+  romanceMovies: Movie[];
+  documentaries: Movie[];
 }
 
-const Banner: React.FC<Props> = ({netflixOriginals}) => {
-
+const Banner: React.FC<Props> = ({
+  netflixOriginals, 
+  actionMovies,
+  comedyMovies,
+  documentaries,
+  horrorMovies,
+  romanceMovies,
+  topRated,
+  trendingNow, 
+}) => {
   const [movie, setMovie] = useState<Movie | undefined>(undefined);
 
   useEffect(() => {

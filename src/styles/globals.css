@@ -5,10 +5,8 @@
 
 /*html, body, heading*/
 @layer base {
-
-
   * {
-    @apply !scrollbar !scrollbar-track-transparent !scrollbar-thumb-red-500;
+    @apply !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-500;
   }
 
   body {

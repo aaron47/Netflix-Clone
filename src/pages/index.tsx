@@ -20,7 +20,7 @@ interface Props {
 const Home = ({netflixOriginals, trendingNow, topRated, actionMovies, comedyMovies, horrorMovies, romanceMovies, documentaries}: Props) => {
 
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
+    <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
     <Head>
       <title>Home - Netflix</title>
       <link rel="icon" href="/favicon.ico" />
@@ -30,7 +30,7 @@ const Home = ({netflixOriginals, trendingNow, topRated, actionMovies, comedyMovi
 
     <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
       <Banner netflixOriginals={netflixOriginals}/>
-      <section>
+      <section className="md:space-y-24">
         <Row title="Trending now" movies={trendingNow}/>
         <Row title="Top Rated" movies={topRated}/>
         <Row title="Action Thrillers" movies={actionMovies}/>

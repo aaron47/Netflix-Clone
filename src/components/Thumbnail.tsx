@@ -1,5 +1,7 @@
 import { Movie } from "../../types";
 import Image from "next/image";
+import { useRecoilState } from "recoil";
+import { ModalState, movieState } from "../atoms/modalAtom";
 
 interface Props {
   // movie: Movie | DocumentData; when using Firebase
@@ -8,8 +10,17 @@ interface Props {
 
 
 const Thumbnail: React.FC<Props> = ({movie}) => {
+
+  const [showModal, setShowModal] = useRecoilState(ModalState);
+  const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
+
   return (
-    <div className="relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105">
+    <div 
+    onClick={() => {
+      setCurrentMovie(movie);
+      setShowModal({ isOpen: true });
+    }}
+    className="relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105">
       <Image src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path}`} className="rounded-sm object-cover md:rounded" layout="fill"/>
     </div>
   )

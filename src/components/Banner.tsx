@@ -19,7 +19,6 @@ const Banner: React.FC<Props> = ({netflixOriginals}) => {
   useEffect(() => {
     const random = Math.floor(Math.random() * netflixOriginals.length);
     setMovie(netflixOriginals[random]!);
-    console.log(netflixOriginals[random]!);
   }, [netflixOriginals])
 
   return (
